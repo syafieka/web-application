@@ -22,16 +22,10 @@ df = user_input_features()
 
 st.subheader('User Input parameters')
 st.write(df)
-import.modelSVRAdvertising
-loaded_scaler = pickle.load(open("modelAdvertising.h5", "rb"))
-prediction = model.predict(df)
-prediction_proba = modelSVRAdvertising.predict_proba(df)
-
-st.subheader('Class labels and their corresponding index number')
-st.write(Y.unique())
+import pickle
+modelAdvertising = pickle.load(open("modelAdvertising.h5", "rb"))
+prediction = modelAdvertising.predict(df)
 
 st.subheader('Prediction')
 st.write(prediction)
 
-st.subheader('Prediction Probability')
-st.write(prediction_proba)
