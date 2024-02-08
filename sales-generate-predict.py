@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 from sklearn.svm import SVR
+import pickle
+
 
 st.write("# Simple Sales Prediction App") 
 st.write("This app predicts the **Sales Advertising**!")
@@ -22,7 +24,6 @@ df = user_input_features()
 
 st.subheader('User Input parameters')
 st.write(df)
-import pickle
 modelAdvertising = pickle.load(open("modelAdvertising.h5", "rb"))
 prediction = modelAdvertising.predict(df)
 
